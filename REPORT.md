@@ -41,6 +41,20 @@ This project implements a system to detect football players in a video, identify
 - Overlay team labels above each player's bounding box.
 
 ---
+### 5. Challenges
+Color Similarity: If teams have similar jersey colors (e.g., shades of blue vs purple), KMeans might fail to clearly separate them.
+
+Lighting Variations: Different lighting conditions across the field (shadows, glare) affect color extraction accuracy.
+
+Occlusion: Players may block one another, leading to poor bounding boxes and misleading color crops.
+
+Resolution Constraints: Low-resolution videos reduce color detail, impacting clustering performance.
+
+Non-Uniform Jerseys: Logos, stripes, or numbers on jerseys may skew color averaging.
+
+Corner Detection Bias: The assumption that corners of the bounding box are background might fail if the player's head or shoulders are near corners.
+
+Frame Rate vs Performance: Processing every frame can be computationally expensive. Skipping too many frames may miss important player movements. 
 
 ## Project Structure
 
